@@ -10,9 +10,10 @@ pkgTest <- function(packages){
     install.packages(new.packages)
     print('Packages installed.', quote = F)
   } else {
-    cat('No new packages needed. \nPackages loaded.')
+    print('No new packages needed.', quote = F)
   }
   for(package in packages){
     suppressPackageStartupMessages(library(package, character.only = T, quietly = T))
   }
+  print('Packages loaded.', quote = F)
 }
